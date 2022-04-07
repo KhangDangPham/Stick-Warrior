@@ -36,12 +36,14 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             movementSpeed = speedForce;
+            transform.localScale = new Vector2(1, 1);
         }
 
         // Left movement
         if (Input.GetKey(KeyCode.A))
         {
             movementSpeed = -speedForce;
+            transform.localScale = new Vector2(-1, 1);
         }
 
         rb.velocity = new Vector2(movementSpeed, rb.velocity.y);
