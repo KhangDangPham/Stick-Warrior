@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
+    public Animator anim;
     public float speedForce = 5;
     public float jumpForce = 10f;
     public Rigidbody2D rb;
@@ -37,13 +37,20 @@ public class PlayerController : MonoBehaviour
         {
             movementSpeed = speedForce;
             transform.localScale = new Vector2(1, 1);
+            anim.SetBool("Running", true);
         }
 
         // Left movement
-        if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A))
         {
             movementSpeed = -speedForce;
             transform.localScale = new Vector2(-1, 1);
+            anim.SetBool("Running", true);
+        }
+
+        else
+        {
+            anim.SetBool("Running", false);
         }
 
         rb.velocity = new Vector2(movementSpeed, rb.velocity.y);

@@ -310,6 +310,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4155914321468086128, guid: d6b6d29735df4a4459020af6edf2516d, type: 3}
   m_PrefabInstance: {fileID: 1250915276}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1129517453 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1968667322089015008, guid: d6b6d29735df4a4459020af6edf2516d, type: 3}
+  m_PrefabInstance: {fileID: 1250915276}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1232955350
 GameObject:
   m_ObjectHideFlags: 0
@@ -3677,6 +3682,7 @@ GameObject:
   - component: {fileID: 1340826924}
   - component: {fileID: 1340826923}
   - component: {fileID: 1340826925}
+  - component: {fileID: 1340826926}
   m_Layer: 0
   m_Name: Player StickMan
   m_TagString: Untagged
@@ -3692,7 +3698,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1340826920}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -39.46, y: -10.22, z: 0}
+  m_LocalPosition: {x: -39.46, y: -10.237, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3713,7 +3719,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.053575516, y: 0.13284492}
+  m_Offset: {x: 0.057775497, y: 0.13589048}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3724,7 +3730,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8317909, y: 2.572424}
+  m_Size: {x: 0.8401909, y: 2.5663328}
   m_EdgeRadius: 0
 --- !u!50 &1340826924
 Rigidbody2D:
@@ -3759,9 +3765,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c93fb207d31b154459b79910ff99a7ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 1129517453}
   speedForce: 5
   jumpForce: 10
   rb: {fileID: 1340826924}
+--- !u!95 &1340826926
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340826920}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 320f2a8a44c6910498befa606e4de628, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1772327936
 GameObject:
   m_ObjectHideFlags: 0
