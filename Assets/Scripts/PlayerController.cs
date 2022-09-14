@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public Animator anim;
+    
     public float speedForce = 5;
     public float jumpForce = 10f;
     public Rigidbody2D rb;
+    public Animator anim;
     float movementSpeed;
 
     bool onLand = true;
@@ -15,7 +16,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        
     }
 
     // Update is called once per frame
