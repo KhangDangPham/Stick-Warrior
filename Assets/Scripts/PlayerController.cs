@@ -27,9 +27,12 @@ public class PlayerController : MonoBehaviour
         // Jumping
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            anim.SetBool("Jumping", true);
+            anim.SetBool("Running", false);
             if (onLand)
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                anim.SetBool("Jumping", false);
             }
         }
 
@@ -51,6 +54,7 @@ public class PlayerController : MonoBehaviour
 
         else
         {
+            anim.SetBool("Jumping", false);
             anim.SetBool("Running", false);
         }
 
