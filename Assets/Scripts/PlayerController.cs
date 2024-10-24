@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    
+
     public float speedForce = 5;
     public float jumpForce = 10f;
     public Rigidbody2D rb;
@@ -16,28 +16,17 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        float hDirection = Input.GetAxis("Horizontal");
         movementSpeed = 0;
 
-        // Jumping
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            anim.SetBool("Jumping", true);
-            anim.SetBool("Running", false);
-            if (onLand)
-            {
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-                anim.SetBool("Jumping", false);
-            }
-        }
-
         // Right movement
-        if (Input.GetKey(KeyCode.D))
+        if (hDirection > 0)
         {
             movementSpeed = speedForce;
             transform.localScale = new Vector2(1, 1);
@@ -45,7 +34,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Left movement
-        else if (Input.GetKey(KeyCode.A))
+        else if (hDirection < 0)
         {
             movementSpeed = -speedForce;
             transform.localScale = new Vector2(-1, 1);
@@ -58,7 +47,21 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("Running", false);
         }
 
-        rb.velocity = new Vector2(movementSpeed, rb.velocity.y);
+        // Jumping
+        if (Input.GetButtonDown("Jump"))
+        {
+            anim.SetBool("Running", false);
+            if (onLand)
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+                anim.SetBool("Jumping", true);
+            } else
+            {
+                anim.SetBool("Jumping", false);
+            }
+        }
+
+        rb.linearVelocity = new Vector2(movementSpeed, rb.linearVelocity.y);
     }
 
     void OnTriggerEnter2D()
