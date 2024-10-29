@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -7,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rigidBody;
     public Animator anim;
     bool onLand;
-    float movementSpeed;
+    float movementSpeed = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -20,27 +22,21 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         float hDirection = Input.GetAxis("Horizontal");
-        movementSpeed = 0;
 
         // Right movement
         if (hDirection > 0)
         {
-            movementSpeed = speedForce;
-            transform.localScale = new Vector2(1, 1);
-            anim.SetBool("Running", true);
+            PlayerMove(speedForce, 1);
         }
 
         // Left movement
         else if (hDirection < 0)
         {
-            movementSpeed = -speedForce;
-            transform.localScale = new Vector2(-1, 1);
-            anim.SetBool("Running", true);
+            PlayerMove(-speedForce, -1);
         }
 
-        else
-        {
-            anim.SetBool("Running", false);
+        else if (hDirection == 0) {
+            PlayerStop();
         }
 
         // Jumping
@@ -49,8 +45,23 @@ public class PlayerController : MonoBehaviour
             PlayerJump();
         }
 
-        //anim.SetBool("Running", hDirection != 0);
+        // Falling
+        PlayerFall();
+        
         anim.SetBool("Onland", onLand);
+    }
+
+    void PlayerMove(float speed, int direction)
+    {
+        movementSpeed = speed;
+        transform.localScale = new Vector2(direction, 1);
+        anim.SetBool("Running", true);
+        rigidBody.linearVelocity = new Vector2(movementSpeed, rigidBody.linearVelocity.y);
+    }
+    void PlayerStop()
+    {
+        movementSpeed = 0;
+        anim.SetBool("Running", false);
         rigidBody.linearVelocity = new Vector2(movementSpeed, rigidBody.linearVelocity.y);
     }
 
@@ -67,5 +78,10 @@ public class PlayerController : MonoBehaviour
         {
             onLand = true;
         }
+    }
+
+    void PlayerFall()
+    {
+        anim.SetFloat("FallingBound", rigidBody.linearVelocity.y);
     }
 }
