@@ -1,15 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speedForce = 5.0f;
+    public float speedForce = 2.5f;
     public float jumpForce = 10f;
     public Rigidbody2D rigidBody;
     public Animator anim;
     bool onLand;
-    float movementSpeed = 0;
+    float movementSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +46,12 @@ public class PlayerController : MonoBehaviour
             PlayerJump();
         }
 
+        // Attacking
+        if (Input.GetMouseButtonDown(0))
+        {
+            PlayerAttack();
+        }
+
         // Falling
         PlayerFall();
         
@@ -53,21 +60,35 @@ public class PlayerController : MonoBehaviour
 
     void PlayerMove(float speed, int direction)
     {
+        Vector2 movementVector = new Vector2(direction, Input.GetAxis("Vertical"));
         movementSpeed = speed;
         transform.localScale = new Vector2(direction, 1);
         anim.SetBool("Running", true);
-        rigidBody.linearVelocity = new Vector2(movementSpeed, rigidBody.linearVelocity.y);
+        //rigidBody.linearVelocity = new Vector2(movementSpeed * direction * Time.fixedDeltaTime, rigidBody.linearVelocity.y);
+
+        if (direction > 0)
+        {
+            //rigidBody.MovePosition(transform.position + movementVector * Time.fixedDeltaTime * movementSpeed);
+            //rigidBody.MovePosition(transform.position + Vector3.right * movementSpeed * Time.fixedDeltaTime);
+            transform.Translate(movementVector * movementSpeed * Time.deltaTime * direction);
+        } else
+        {
+            //rigidBody.MovePosition(transform.position - movementVector * Time.fixedDeltaTime * movementSpeed);
+            //rigidBody.MovePosition(transform.position - Vector3.left * movementSpeed * Time.fixedDeltaTime);
+            transform.Translate(movementVector * movementSpeed * Time.deltaTime * direction);
+        }
     }
     void PlayerStop()
     {
         movementSpeed = 0;
         anim.SetBool("Running", false);
-        rigidBody.linearVelocity = new Vector2(movementSpeed, rigidBody.linearVelocity.y);
+        //rigidBody.linearVelocity = new Vector2(movementSpeed, rigidBody.linearVelocity.y);
     }
 
     void PlayerJump()
     {
-        rigidBody.linearVelocity = new Vector2(rigidBody.linearVelocity.x, jumpForce);
+        //rigidBody.linearVelocity = new Vector2(rigidBody.linearVelocity.x, jumpForce);
+        rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         anim.SetTrigger("Jumping");
         onLand = false;
     }
@@ -83,5 +104,10 @@ public class PlayerController : MonoBehaviour
     void PlayerFall()
     {
         anim.SetFloat("FallingBound", rigidBody.linearVelocity.y);
+    }
+
+    void PlayerAttack()
+    {
+        anim.SetTrigger("Attacking");
     }
 }

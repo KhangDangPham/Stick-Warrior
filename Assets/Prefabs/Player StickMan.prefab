@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6831902877874535118}
   - component: {fileID: 6831902877874535113}
   - component: {fileID: 6831902877874535116}
-  - component: {fileID: 1292057072698394404}
+  - component: {fileID: 1476635826165543531}
   m_Layer: 0
   m_Name: Player StickMan
   m_TagString: Player
@@ -131,7 +131,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1292057072698394404
+--- !u!114 &1476635826165543531
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,7 +143,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c93fb207d31b154459b79910ff99a7ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 0
+  speedForce: 5
+  jumpForce: 10
+  rigidBody: {fileID: 6831902877874535118}
+  anim: {fileID: 5552106679971225341}
 --- !u!1001 &6831902877792480302
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -440,5 +443,10 @@ PrefabInstance:
 --- !u!4 &5552106678578697119 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1423912517436702641, guid: d6b6d29735df4a4459020af6edf2516d, type: 3}
+  m_PrefabInstance: {fileID: 6831902877792480302}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5552106679971225341 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1423912515607737043, guid: d6b6d29735df4a4459020af6edf2516d, type: 3}
   m_PrefabInstance: {fileID: 6831902877792480302}
   m_PrefabAsset: {fileID: 0}

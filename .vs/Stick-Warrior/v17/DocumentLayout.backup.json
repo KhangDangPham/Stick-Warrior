@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\Khang\\Documents\\Github\\Stick-Warrior\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Khang\\Documents\\Github\\Stick-Warrior\\Library\\PackageCache\\com.unity.2d.tilemap\\Editor\\GridEditorUtility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.2d.tilemap\\Editor\\GridEditorUtility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{298302B8-7804-15E1-F515-FF449C6E6FE8}|Assembly-CSharp.csproj|c:\\users\\khang\\documents\\github\\stick-warrior\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{298302B8-7804-15E1-F515-FF449C6E6FE8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -23,27 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "GridEditorUtility.cs",
-              "DocumentMoniker": "C:\\Users\\Khang\\Documents\\Github\\Stick-Warrior\\Library\\PackageCache\\com.unity.2d.tilemap\\Editor\\GridEditorUtility.cs",
-              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.2d.tilemap\\Editor\\GridEditorUtility.cs",
-              "ToolTip": "C:\\Users\\Khang\\Documents\\Github\\Stick-Warrior\\Library\\PackageCache\\com.unity.2d.tilemap\\Editor\\GridEditorUtility.cs",
-              "RelativeToolTip": "Library\\PackageCache\\com.unity.2d.tilemap\\Editor\\GridEditorUtility.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAiwCMAAABVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T18:27:44.578Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "C:\\Users\\Khang\\Documents\\Github\\Stick-Warrior\\Assets\\Scripts\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController.cs",
               "ToolTip": "C:\\Users\\Khang\\Documents\\Github\\Stick-Warrior\\Assets\\Scripts\\PlayerController.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayerController.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAYwDgAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T22:48:39.647Z",
+              "WhenOpened": "2024-11-05T22:30:43.368Z",
               "EditorCaption": ""
             }
           ]
