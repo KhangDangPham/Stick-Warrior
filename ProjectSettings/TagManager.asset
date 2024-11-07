@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
+  - FallingDetector
   layers:
   - Default
   - TransparentFX

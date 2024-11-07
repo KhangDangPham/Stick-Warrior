@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -11,12 +12,15 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
     bool onLand;
     float movementSpeed;
+    private Vector3 checkpoint;
+    public GameObject fallDetector;
 
     // Start is called before the first frame update
     void Start()
     {
         //rigidBody = GetComponent<Rigidbody2D>();
         //anim = GetComponent<Animator>();
+        checkpoint = transform.position;
     }
 
     // Update is called once per frame
@@ -56,6 +60,8 @@ public class PlayerController : MonoBehaviour
         PlayerFall();
         
         anim.SetBool("Onland", onLand);
+
+        fallDetector.transform.position = new Vector2(transform.position.x, fallDetector.transform.position.y);
     }
 
     void PlayerMove(float speed, int direction)
@@ -98,6 +104,11 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             onLand = true;
+        }
+
+        if (collision.gameObject.CompareTag("FallingDetector"))
+        {
+            transform.position = checkpoint;
         }
     }
 
