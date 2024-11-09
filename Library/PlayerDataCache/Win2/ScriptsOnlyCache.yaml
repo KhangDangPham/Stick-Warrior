@@ -6,11 +6,14 @@ ScriptsOnlyBuild:
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Animation.Runtime.dll:
+    - UnityEngine.U2D.Animation.BufferManager
     - UnityEngine.U2D.Animation.DeformationManager
     - UnityEngine.U2D.Animation.DeformationManagerUpdater
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
     Unity.2D.Tilemap.Editor.dll:
+    - UnityEditor.Tilemaps.GridBrush
+    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridBrushPickStore
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
@@ -564,7 +567,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
-      Hash: 89755e49f892365c1eb5b53e72876154
+      Hash: 5223ec2529277c8ab63c6b7c299c496e
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PlayerController
@@ -756,7 +759,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: a619bc86c74ca7cd76570072a425e28d
+      Hash: dd2904e378bfae089fb0a3420fadfd1f
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: CameraController
@@ -859,4 +862,5 @@ ScriptsOnlyBuild:
   platform: 5
   scenePathNames:
   - Assets/Scenes/Grassfields.unity
-  playerPath: C:/Users/Khang/Documents/Github/Stick-Warrior/Builds/Stick Warrior.exe
+  playerPath: C:/Users/Khang/Documents/Github/Stick-Warrior/Builds/Build_11082024/Stick
+    Warrior.exe
